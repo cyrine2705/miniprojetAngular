@@ -1,0 +1,32 @@
+<div class="container">
+    <h2> Ajout d'un produit touristique</h2>
+    <form [formGroup]="VoyForm" (ngSubmit)="onSubmitForm()">
+        <div>
+            <label> Donnez le libellé</label>
+            <input type="text" class="form-control" formControlName="libelle">
+           
+        </div>
+
+        <div>
+            <label> Donnez le prix</label>
+            <input type="text" class="form-control" formControlName="prix">
+        </div>
+
+        <div>
+            <label> Donnez une description</label>
+            <input type="text" class="form-control" formControlName="description">
+                    
+        </div>
+        <div>
+            <label> Donnez le chemin de l'image</label>
+            <input type="text" class="form-control" formControlName="image">
+            
+        </div>
+        <div>
+            <label> promotion </label>
+            <input type="checkbox" formControlName="promotion" value="false"> en promotion
+        </div>
+        <button type="submit">submit</button>
+      
+    </form>
+</div>
