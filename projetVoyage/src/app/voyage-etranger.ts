@@ -2,7 +2,7 @@ export class VoyageEtranger {
     constructor(
         public id?:number,
         public libelle?: String ,
-        public dateAllé?:Date,
+        public dateAlle?:Date,
         public description?:String,
         public nbJours?:number,
         public prix?:number,

@@ -1,3 +1,41 @@
-<ng-container *ngFor="let v of voyages">
-    {{v|json}}
-</ng-container>
+
+<table class="table table-striped center" >
+    <thead>
+      <tr >
+        <th scope="col">Id</th>
+        <th scope="col">Libelle</th>
+        <th scope="col">Date d'aller</th>
+        <th scope="col">Description</th>
+<th scope="col">Nombre jour</th>
+       
+        <th scope="col">prix</th>
+<th scope="col">photo</th>
+<th scope="col">promo</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let item of voyages"><td>{{item.id}}</td>
+        <td>{{item.libelle}}</td>
+        <td>{{item.dateAlle}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.nbJours}}</td>
+        <td>{{item.prix}}</td>
+        <td>{{item.photo}}</td>
+        <td>{{item.promo}}</td>
+        <td><button [routerLink]="['/modifier',item]">modifier</button></td>
+        <td><button (click)="delete(item)">supprimer</button></td>
+    </tr>
+   </table>
+
+<main class="page-content">
+    <div   *ngFor="let item of voyages" class="card">
+      <div  class="content">
+        <h2 class="title">{{item.libelle}}</h2>
+        <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+        <button class="btn">View Trips</button>
+      </div>
+    </div>
+  
+  </main>

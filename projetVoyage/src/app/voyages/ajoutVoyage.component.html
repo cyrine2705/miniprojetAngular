@@ -14,7 +14,17 @@
 
         <div>
             <label> Donnez une description</label>
-            <input type="text" class="form-control" formControlName="description">
+            <textarea type="text" class="form-control" formControlName="description"> </textarea>
+                    
+        </div>
+        <div>
+            <label> Donnez date d'allée </label>
+            <input type="date" class="form-control" formControlName="dateAllee">
+                    
+        </div>
+        <div>
+            <label> Donnez nombre de joures </label>
+            <input type="number" class="form-control" formControlName="nbJours">
                     
         </div>
         <div>
@@ -23,7 +33,7 @@
             
         </div>
         <div>
-            <label> promotion </label>
+         
             <input type="checkbox" formControlName="promotion" value="false"> en promotion
         </div>
         <button type="submit">submit</button>

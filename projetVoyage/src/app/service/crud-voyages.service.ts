@@ -1,19 +1,31 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import * as firebase from 'firebase/compat';
+import { Observable, observable } from 'rxjs';
+import { Subject } from 'rxjs/internal/Subject';
+
 import { VoyageEtranger } from '../voyage-etranger';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrudVoyagesService {
-  lesVoyages:VoyageEtranger[] = [];
-  id:number = 0;
+  lesVoyages:Observable<VoyageEtranger[]>;
+  
+  id:number;
   r:string;
-  constructor(public fireservice:AngularFirestore) { }
+  itemCollection:AngularFirestoreCollection;
+
+
+  constructor(public fireservice:AngularFirestore) { 
+    this.lesVoyages=this.fireservice.collection('VoyagesEtranger').valueChanges();
+  }
+  public getVoyage(){
+    return this.lesVoyages;
+  }
   public addNewVoyage(v ) {
-    v.id=this.id;
-    this.id=this.id + 1;
-     return this.fireservice.collection('VoyagesEtranger').doc(`${v.id}`).set(v);
+  
+     return this.fireservice.collection('VoyagesEtranger').add(v);
       
   } 
   public updateNewVoyage(id,v ) {
@@ -21,8 +33,19 @@ export class CrudVoyagesService {
      return this.fireservice.collection('VoyagesEtranger').doc(`${id}`).set(v);
       
   } 
-  public deleteVoyage(id ) {
+  public deleteVoyage(name ) {
    // lezem el id tjibha men lpage lo5ra besh t'deleteha
-    return this.fireservice.collection("VoyagesEtranger").doc(`${id}`).delete()
+   console.log(name);
+    return this.fireservice.collection('VoyagesEtranger').doc(name).delete();
+    
+  }
+  voyages: VoyageEtranger[] = [];
+  voayage= new Subject<VoyageEtranger[]>();
+
+  emitBooks() {
+    this.voayage.next(this.voyages);
   }
 }
+
+
+

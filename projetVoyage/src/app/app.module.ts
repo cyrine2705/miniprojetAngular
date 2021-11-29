@@ -7,9 +7,11 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { VoyagesComponent } from './voyages/voyages.component';
+import { AjoutVoyageComponent } from './voyages/ajoutVoyage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListVoyagesComponent } from './list-voyages/list-voyages.component';
+import { DetailsComponent } from './details/details.component';
+import { ModifierVoyageComponent } from './modifier-voyage/modifier-voyage.component';
 
 const config={
   apiKey: "AIzaSyCZy-dWHpoCBLSVp76M1f-ESWeYwOb91rM",
@@ -23,8 +25,10 @@ const config={
 @NgModule({
   declarations: [
     AppComponent,
-    VoyagesComponent,
+    AjoutVoyageComponent,
     ListVoyagesComponent,
+    DetailsComponent,
+    ModifierVoyageComponent,
    
   ],
   imports: [
