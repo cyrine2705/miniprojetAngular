@@ -22,15 +22,13 @@ export class CrudVoyagesService {
   public getVoyage(){
     return this.fireservice.collection('VoyagesEtranger').snapshotChanges();
   }
-  public getVoyageById(id){
-    return this.fireservice.collection('VoyagesEtranger').doc(id).valueChanges();
-  }
+
   public addNewVoyage(v ) {
      return this.fireservice.collection('VoyagesEtranger').add(v);
   }
-  public updateNewVoyage(id,v ) {
+  public updateNewVoyage(v,id ) {
  // lezem el id tjibha men lpage lo5ra besh t'updati 3leha
-     return this.fireservice.collection('VoyagesEtranger').doc(`${id}`).set(v);
+     return this.fireservice.collection('VoyagesEtranger').doc(id).set(v);
 
   }
   public deleteVoyage(item) {

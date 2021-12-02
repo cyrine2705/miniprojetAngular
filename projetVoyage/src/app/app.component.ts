@@ -11,7 +11,5 @@ export class AppComponent {
   title = 'projetVoyage';
   constructor(db: AngularFirestore){
     const voyages=db.collection('/VoyagesEtranger').valueChanges();
-      voyages.subscribe(console.log);
-    
   }
 }

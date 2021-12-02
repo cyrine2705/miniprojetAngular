@@ -1,2 +1,39 @@
-<p>modifier-voyage works!</p>
-{{identifiant}}
+<ng-container *ngFor="let event of voyages">
+  <ng-container *ngIf="event.id === identifiant">
+    <div class="container">
+      <h2> Modifier le produit touristique {{event.data.libelle}}</h2>
+      <form [formGroup]="VoyForm" (ngSubmit)="onSubmitForm()">
+        <div>
+          <label> Donnez le libellé</label>
+          <input type="text"  class="form-control" formControlName="libelle" [(ngModel)]="event.data.libelle">
+        </div>
+        <div>
+          <label> Donnez le prix</label>
+          <input type="text" class="form-control" formControlName="prix" [(ngModel)]="event.data.prix">
+        </div>
+        <div>
+          <label> Donnez une description</label>
+          <textarea type="text" class="form-control" formControlName="description" [(ngModel)]="event.data.description"> </textarea>
+
+        </div>
+        <div>
+          <label> Donnez date d'allée </label>
+          <input type="date" class="form-control" formControlName="dateAllee" [(ngModel)]="event.data.dateAllee">
+
+        </div>
+        <div>
+          <label> Donnez nombre de joures </label>
+          <input type="number" class="form-control" formControlName="nbJours" [(ngModel)]="event.data.nbJours">
+        </div>
+        <div>
+          <label> Donnez le chemin de l'image</label>
+          <input type="text" class="form-control" formControlName="image" [(ngModel)]="event.data.image">
+        </div>
+        <div>
+          <input type="checkbox" formControlName="promotion" value="false"> en promotion
+        </div>
+        <button type="submit">submit</button>
+      </form>
+    </div>
+  </ng-container>
+</ng-container>
