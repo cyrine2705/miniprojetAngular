@@ -10,19 +10,24 @@ import { VoyageEtranger } from '../voyage-etranger';
   styleUrls: ['./list-voyages.component.css']
 })
 export class ListVoyagesComponent implements OnInit {
-voyages:VoyageEtranger[];
+voyages:  any[];
   constructor(  db: AngularFirestore, private serviceVoyage:CrudVoyagesService, private router: Router) {
     };
 
   ngOnInit(): void {
-    this.serviceVoyage.getVoyage().subscribe(voyages=>{this.voyages=voyages});
-    console.log(this.voyages);
+    this.getVoyage();
   }
-  delete(name){
-    console.log ("hi") ;
-      this.serviceVoyage.deleteVoyage(name);
-    this.router.navigate(['/liste']);
-    
+  getVoyage(){
+    this.serviceVoyage.getVoyage().subscribe(actioanArray=>{
+      this.voyages=actioanArray.map(item => {
+        return{
+          id : item.payload.doc.id,
+          data: item.payload.doc.data(),
+        }
+      })
+    });
   }
-
+  delete(item){
+    this.serviceVoyage.deleteVoyage(item);
+  }
 }

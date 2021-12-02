@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:"Details",component:DetailsComponent},
   {path:"liste", component:ListVoyagesComponent},
   {path:"ajout", component:AjoutVoyageComponent},
-  {path:"modifier/id", component:ModifierVoyageComponent},
+  {path:"modifier/:id", component:ModifierVoyageComponent},
   {path:"**", component:ListVoyagesComponent}
 ];
 

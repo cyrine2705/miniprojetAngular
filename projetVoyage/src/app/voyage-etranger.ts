@@ -1,6 +1,6 @@
 export class VoyageEtranger {
     constructor(
-        public id?:number,
+        public id?:string,
         public libelle?: String ,
         public dateAlle?:Date,
         public description?:String,
@@ -8,7 +8,7 @@ export class VoyageEtranger {
         public prix?:number,
         public photo?:String ,
         public promo?: boolean ){}
-       
+
 
 }
 
