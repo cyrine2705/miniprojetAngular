@@ -12,6 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListVoyagesComponent } from './list-voyages/list-voyages.component';
 import { DetailsComponent } from './details/details.component';
 import { ModifierVoyageComponent } from './modifier-voyage/modifier-voyage.component';
+import { AuthenficationComponent } from './authenfication/authenfication.component';
+import { MenuComponent } from './menu/menu.component';
 
 const config={
   apiKey: "AIzaSyCZy-dWHpoCBLSVp76M1f-ESWeYwOb91rM",
@@ -29,6 +31,8 @@ const config={
     ListVoyagesComponent,
     DetailsComponent,
     ModifierVoyageComponent,
+    AuthenficationComponent,
+    MenuComponent,
    
   ],
   imports: [

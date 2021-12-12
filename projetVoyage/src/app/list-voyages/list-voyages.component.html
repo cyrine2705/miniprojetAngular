@@ -1,33 +1,7 @@
-<table class="table table-striped center">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Libelle</th>
-      <th scope="col">Date d'aller</th>
-      <th scope="col">Description</th>
-      <th scope="col">Nombre jour</th>
-
-      <th scope="col">prix</th>
-      <th scope="col">photo</th>
-      <th scope="col">promo</th>
-
-    </tr>
-  </thead>
-  <tbody>
-
-   <tr *ngFor="let item of voyages">
-      <td>{{item.id}}</td>
-      <td>{{item.data.libelle}}</td>
-      <td>{{item.data.dateAlle}}</td>
-      <td>{{item.data.description}}</td>
-      <td>{{item.data.nbJours}}</td>
-      <td>{{item.data.prix}}</td>
-      <td>{{item.data.photo}}</td>
-      <td>{{item.data.promo}}</td>
-      <td><button [routerLink]="['/modifier',item.id]">modifier</button></td>
-      <td><button (click)="delete(item)">supprimer</button></td>
-    </tr>
-</table>
+<form>
+  <input type="text" class="form-control"  #rech >
+  <input type="button" value="Rechercher" class="btn btn-warning" >
+</form>
 
 <main class="page-content">
   <div *ngFor="let item of voyages" class="card">
@@ -35,7 +9,9 @@
       <h2 class="title">{{item.data.libelle}}</h2>
       <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the
         mountains</p>
-      <button class="btn">View Trips</button>
+        <img class=".card:nth-child(1):before" [src]="item.photo"/>
+      <button class="btn" [routerLink]="['/modifier',item.id]">modifier</button>
+      <button class="btn" (click)="delete(item)">supprimer</button>
     </div>
   </div>
 

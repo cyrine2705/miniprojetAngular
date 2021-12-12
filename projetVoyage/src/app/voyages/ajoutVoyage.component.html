@@ -1,3 +1,34 @@
+<table class="table table-striped center">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Libelle</th>
+        <th scope="col">Date d'aller</th>
+        <th scope="col">Description</th>
+        <th scope="col">Nombre jour</th>
+  
+        <th scope="col">prix</th>
+        <th scope="col">photo</th>
+        <th scope="col">promo</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+  
+     <tr *ngFor="let item of voyages">
+        <td>{{item.id}}</td>
+        <td>{{item.data.libelle}}</td>
+        <td>{{item.data.dateAllee|date :'dd-mm-aaaa'}}</td>
+        <td>{{item.data.description}}</td>
+        <td>{{item.data.nbJours}}</td>
+        <td>{{item.data.prix}}</td>
+        <td>{{item.data.photo}}</td>
+        <td><input type="checkbox" [checked]="item.data.promo"/> </td>
+        <td><button [routerLink]="['/modifier',item.id]">modifier</button></td>
+        <td><button (click)="delete(item)">supprimer</button></td>
+      </tr>
+  </table>
+
 <div class="container">
     <h2> Ajout d'un produit touristique</h2>
     <form [formGroup]="VoyForm" (ngSubmit)="onSubmitForm()">
