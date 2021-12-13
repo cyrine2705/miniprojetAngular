@@ -34,6 +34,9 @@ export class CrudVoyagesService {
   public deleteVoyage(item) {
     return this.fireservice.collection('VoyagesEtranger').doc(item.id).delete();
   }
+  public rech(rech){
+    return this.fireservice.collection('VoyagesEtranger', ref => ref.where('libelle', '==',rech)).snapshotChanges();
+  }
   voyages: VoyageEtranger[] = [];
   voayage= new Subject<VoyageEtranger[]>();
 

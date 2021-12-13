@@ -1,4 +1,4 @@
-<table class="table table-striped center">
+<table class="table table-striped center table-primary table-bordered" >
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -24,8 +24,7 @@
         <td>{{item.data.prix}}</td>
         <td>{{item.data.photo}}</td>
         <td><input type="checkbox" [checked]="item.data.promo"/> </td>
-        <td><button [routerLink]="['/modifier',item.id]">modifier</button></td>
-        <td><button (click)="delete(item)">supprimer</button></td>
+      
       </tr>
   </table>
 
@@ -67,7 +66,7 @@
          
             <input type="checkbox" formControlName="promotion" value="false"> en promotion
         </div>
-        <button type="submit">submit</button>
+        <button type="submit" class="btn btn-outline-info" >submit</button>
       
     </form>
 </div>

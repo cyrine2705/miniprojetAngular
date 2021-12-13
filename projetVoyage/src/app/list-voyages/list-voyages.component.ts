@@ -30,4 +30,16 @@ voyages:  any[];
   delete(item){
     this.serviceVoyage.deleteVoyage(item);
   }
+  Oncherche(ch:string){
+    this.serviceVoyage.rech(ch).subscribe(actioanArray=>{
+      this.voyages=actioanArray.map(item => {
+        return{
+          id : item.payload.doc.id,
+          data: item.payload.doc.data(),
+          name:item.payload.doc.data()['libelle'],
+        }
+      })
+    });
+  }
+ 
 }

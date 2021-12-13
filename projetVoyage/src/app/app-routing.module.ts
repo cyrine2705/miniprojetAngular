@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutusComponent } from './aboutus/aboutus.component';
 import { AuthGuard } from './auth.guard';
 import { AuthenficationComponent } from './authenfication/authenfication.component';
 import { DetailsComponent } from './details/details.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:"liste", component:ListVoyagesComponent},
   {path:"login", component:AuthenficationComponent},
   {path:"ajout", component:AjoutVoyageComponent,},
+  {path:"aboutUs",component:AboutusComponent},
   {path:"modifier/:id", component:ModifierVoyageComponent },
   
   {path:"**", component:ListVoyagesComponent}

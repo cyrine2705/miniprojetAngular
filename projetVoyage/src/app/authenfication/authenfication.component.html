@@ -1,14 +1,14 @@
 <div class="container">
     <div class="left">
       <div class="header">
-        <h2 class="animation a1">Welcome </h2>
-        <h4 class="animation a2">Log in to your account using email and password</h4>
+        <h2 class="animation a1">Bonjour </h2>
+        <h4 class="animation a2">veuillez saisir votre nom et mot de passe </h4>
       </div>
       <div class="form">
-        <input  type="email" class="form-field animation a3" placeholder="Email Address"  #user>
-        <input   type="password" class="form-field animation a4" placeholder="Password"  #pass>
+        <input  type="text" class="form-field animation a3" placeholder="nom utilisateur"  #user>
+        <input   type="password" class="form-field animation a4" placeholder="Mot de passe "  #pass>
      
-        <button class="animation a6" (click)="OnSubmit(user.value,pass.value)">LOGIN</button>
+        <button class="animation a6" (click)="OnSubmit(user.value,pass.value)">connexion</button>
       </div>
     </div>
     <div class="right"></div>

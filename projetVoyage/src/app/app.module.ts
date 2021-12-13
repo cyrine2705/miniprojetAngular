@@ -14,6 +14,7 @@ import { DetailsComponent } from './details/details.component';
 import { ModifierVoyageComponent } from './modifier-voyage/modifier-voyage.component';
 import { AuthenficationComponent } from './authenfication/authenfication.component';
 import { MenuComponent } from './menu/menu.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 const config={
   apiKey: "AIzaSyCZy-dWHpoCBLSVp76M1f-ESWeYwOb91rM",
@@ -33,6 +34,7 @@ const config={
     ModifierVoyageComponent,
     AuthenficationComponent,
     MenuComponent,
+    AboutusComponent,
    
   ],
   imports: [
