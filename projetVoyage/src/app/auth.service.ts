@@ -25,7 +25,8 @@ admin:boolean;
  
 }
 loggedOut(){
-  this.router.navigate(['/login']);
+  this.admin=false;
+  this.router.navigate(['/liste']);
   localStorage.removeItem('loggedUser');
   return false ;
 }

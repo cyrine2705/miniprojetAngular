@@ -1,5 +1,6 @@
+
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/internal/Subject';
 
@@ -10,9 +11,11 @@ import { VoyageEtranger } from '../voyage-etranger';
 })
 export class CrudVoyagesService {
   lesVoyages:Observable<any[]>;
+  voyages: VoyageEtranger[] = [];
+  voayage= new Subject<VoyageEtranger[]>();
 
   id:number;
-  r:string;
+  
   itemCollection:AngularFirestoreCollection;
 
 
@@ -27,7 +30,7 @@ export class CrudVoyagesService {
      return this.fireservice.collection('VoyagesEtranger').add(v);
   }
   public updateNewVoyage(v,id ) {
- // lezem el id tjibha men lpage lo5ra besh t'updati 3leha
+
      return this.fireservice.collection('VoyagesEtranger').doc(id).set(v);
 
   }
@@ -37,13 +40,14 @@ export class CrudVoyagesService {
   public rech(rech){
     return this.fireservice.collection('VoyagesEtranger', ref => ref.where('libelle', '==',rech)).snapshotChanges();
   }
-  voyages: VoyageEtranger[] = [];
-  voayage= new Subject<VoyageEtranger[]>();
+  
 
-  emitBooks() {
-    this.voayage.next(this.voyages);
-  }
+ public tri (){
+  //return this.fireservice.collection("VoyagesEtranger").orderBy("prix", "asc");
+   
+      }
+    
+  
+ 
 }
-
-
 

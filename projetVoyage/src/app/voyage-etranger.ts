@@ -7,7 +7,8 @@ export class VoyageEtranger {
         public nbJours?:number,
         public prix?:number,
         public photo?:String ,
-        public promo?: boolean ){}
+        public promo?: boolean ,
+        public reservation ?:string[]){}
 
 
 }

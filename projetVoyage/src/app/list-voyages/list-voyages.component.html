@@ -1,24 +1,29 @@
-  <div class="container-fluid">
+<div > 
+  <img style="position:static;width:1518px;height:700px"src="../assets/images/trip.jpg"/>
+</div>
+<br>
+  <div class="container-fluid" style="width:750px; height: 20;">
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #rech >
-      <button class="btn btn-outline-success" type="submit" (click)="Oncherche(rech.value)">Search</button>
-    </form>
-  </div>
-  
-
-
-<main class="page-content">
-  <div *ngFor="let item of voyages; index as i" class="card" [style.background-image]="'url( '+item.data.image+')'" >
-    <div class="content" >
-    <div 
-     >
-      <h2 class="title">{{item.data.libelle}}</h2>
-      <p class="copy">{{item.data.prix}}</p>
+      <input class="form-control me-2" type="search" placeholder="Search" name="rech" aria-label="Search" #rech >
+      <button class="btn btn-outline-success" (click)=" Oncherche(rech.value)">Search</button>
       
-      <button class="btn" [routerLink]="['/modifier',item.id]">modifier</button>
-      <button class="btn" (click)="delete(item)">supprimer</button>
-    </div>
+    </form>
+    
+    <button class="btn btn-outline-success" >de prix plus bas </button>
   </div>
+  <br>
+  <div style="text-align: center"> <h3>la liste de nos voyages </h3></div>
+  <br>
+ <main class="page-content">
+     
+      <div *ngFor="let item of voyages; index as i" class="card" [style.background-image]="'url( '+item.data.image+')'" [style.backgroundSize]="'cover'"  >
+    <div class="content" >
+      <h2 class="title">{{item.data.libelle | pipePerso }}</h2>
+      <p class="copy">{{item.data.prix|number:'3.2'}} DT</p>
+      <button *ngIf="!Admin()"class="btn" [routerLink]="['/Details',item.id]">en savoir plus </button>
+      <button *ngIf="Admin()" class="btn" [routerLink]="['/modifier',item.id]">modifier</button>
+      <button *ngIf="Admin()" class="btn" (click)="delete(item)">supprimer</button>
+    </div>
   </div>
 
 </main>

@@ -15,6 +15,10 @@ import { ModifierVoyageComponent } from './modifier-voyage/modifier-voyage.compo
 import { AuthenficationComponent } from './authenfication/authenfication.component';
 import { MenuComponent } from './menu/menu.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { ErrorComponent } from './error/error.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
+import { PipePersoPipe } from './pipe-perso.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 const config={
   apiKey: "AIzaSyCZy-dWHpoCBLSVp76M1f-ESWeYwOb91rM",
@@ -26,6 +30,8 @@ const config={
     measurementId: "G-WZZWQ57QHP"
 };
 @NgModule({
+ 
+
   declarations: [
     AppComponent,
     AjoutVoyageComponent,
@@ -35,6 +41,9 @@ const config={
     AuthenficationComponent,
     MenuComponent,
     AboutusComponent,
+    ErrorComponent,
+    AcceuilComponent,
+    PipePersoPipe,
    
   ],
   imports: [
@@ -44,7 +53,8 @@ const config={
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule ,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
