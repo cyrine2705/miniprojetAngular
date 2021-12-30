@@ -16,7 +16,7 @@ import { AuthenficationComponent } from './authenfication/authenfication.compone
 import { MenuComponent } from './menu/menu.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ErrorComponent } from './error/error.component';
-import { AcceuilComponent } from './acceuil/acceuil.component';
+
 import { PipePersoPipe } from './pipe-perso.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
@@ -42,7 +42,7 @@ const config={
     MenuComponent,
     AboutusComponent,
     ErrorComponent,
-    AcceuilComponent,
+   
     PipePersoPipe,
    
   ],

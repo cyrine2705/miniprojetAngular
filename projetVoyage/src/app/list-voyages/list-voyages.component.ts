@@ -50,7 +50,9 @@ voyages:  any[];
     
     return this.userService.Admin();
   }
-  
+  tri(){
+  // return this.voyages=this.serviceVoyage.tri();
+  }
    
  
 }

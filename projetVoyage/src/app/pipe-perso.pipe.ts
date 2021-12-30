@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PipePersoPipe implements PipeTransform {
 
   transform(chaine:string): string {
-    return "~~ "+ chaine +"~~";
+    return "~~ "+ chaine +" ~~";
   }
 
 }

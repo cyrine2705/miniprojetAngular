@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { AcceuilComponent } from './acceuil/acceuil.component';
+
 import { AuthGuard } from './auth.guard';
 import { AuthenficationComponent } from './authenfication/authenfication.component';
 import { DetailsComponent } from './details/details.component';

@@ -19,7 +19,7 @@
 	 <span *ngIf="!v.data.promotion" class="price">{{v.data.prix|number:'3.2'}} DT</span>
 	 <span *ngIf="v.data.promotion">  {{v.data.prix-500 |number:'3.2'}} DT </span>
    <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-    saisir votre mail <input type="text" name="txt"/>
+    <span>saisir votre mail <input type="text" name="txt"/> </span>
    <span class="buy" >réserver</span>
  </button>
 	
@@ -35,10 +35,10 @@
 <div class="info">
 	<h2> Description</h2>
 	<ul>
-		<li><strong>date d'allé  : </strong>{{v.data.dateAllee}}</li>
-		<li><strong>nbJours: </strong>{{v.data.nbJours}}</li>
-		<li *ngIf="v.data.promotion"> en promotion : {{v.data.prix-500 |number:'3.2'}} DT au lieu de  {{v.data.prix|number:'3.2'}} DT<li></li>
-	
+		<li><strong>date d'allée  : </strong>{{v.data.dateAllee}}</li>
+		<li><strong>Nombre de jours: </strong>{{v.data.nbJours}}</li>
+		<li *ngIf="v.data.promotion"><strong> en promotion :</strong> {{v.data.prix-500 |number:'3.2'}} DT au lieu de  {{v.data.prix|number:'3.2'}} DT</li>
+
 		
 	</ul>
 </div>
